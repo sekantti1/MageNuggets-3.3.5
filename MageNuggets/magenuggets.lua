@@ -563,6 +563,18 @@ function MageNuggetsSP_OnUpdate(self, elapsed)
                 spellHit = spellHit + 2;
             end
         end
+        if(UnitClass("Player") == 'Priest') then
+            local namesf, _, _, _, currRanksf, _ = GetTalentInfo(3,6) --shadow focus
+            if(currRanksf == 3) then
+                spellHit = spellHit + 3;
+            end
+            if(currRanksf == 2) then
+                spellHit = spellHit + 2;
+            end
+            if(currRanksf == 1) then
+                spellHit = spellHit + 1;
+            end
+        end
         if(UnitClass("Player") == 'Mage') then
             local _, _, _, _, currRank7, _ = GetTalentInfo(3,6); --precision
             local _, _, _, _, currRank8, _ = GetTalentInfo(1,2); --arcane focus  
